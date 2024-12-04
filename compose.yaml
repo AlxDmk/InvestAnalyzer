@@ -1,0 +1,6 @@
+﻿services:
+  tinkoffinvest.web:
+    image: tinkoffinvest.web
+    build:
+      context: .
+      dockerfile: TinkoffInvest/src/TinkoffInvest.Web/Dockerfile

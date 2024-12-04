@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TinkoffInvest", "TinkoffInvest", "{0C9B8770-B957-4AA0-9BBA-6791E0F6450A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DA9B7502-E2F8-4BD5-9978-21DF7CE651E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinkoffInvest.Core", "TinkoffInvest\src\TinkoffInvest.Core\TinkoffInvest.Core.csproj", "{00E8EC20-303A-4868-9D7A-BEDD51ADEBEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinkoffInvest.Application", "TinkoffInvest\src\TinkoffInvest.Application\TinkoffInvest.Application.csproj", "{52A143C7-1901-4236-AD89-6B3D486469BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinkoffInvest.Data", "TinkoffInvest\src\TinkoffInvest.Data\TinkoffInvest.Data.csproj", "{B41B03E9-8BAA-45DA-AF35-E5EB66B33D1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinkoffInvest.Presentation", "TinkoffInvest\src\TinkoffInvest.Presentation\TinkoffInvest.Presentation.csproj", "{50250625-52C4-42D3-B07E-0DAADC863916}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinkoffInvest.Web", "TinkoffInvest\src\TinkoffInvest.Web\TinkoffInvest.Web.csproj", "{BBDEDE98-0FFC-4145-B04B-E7DBDC129EBA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{436CA4B4-31C1-44EE-B621-1A6E86640CBE}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DA9B7502-E2F8-4BD5-9978-21DF7CE651E1} = {0C9B8770-B957-4AA0-9BBA-6791E0F6450A}
+		{00E8EC20-303A-4868-9D7A-BEDD51ADEBEB} = {DA9B7502-E2F8-4BD5-9978-21DF7CE651E1}
+		{52A143C7-1901-4236-AD89-6B3D486469BE} = {DA9B7502-E2F8-4BD5-9978-21DF7CE651E1}
+		{B41B03E9-8BAA-45DA-AF35-E5EB66B33D1B} = {DA9B7502-E2F8-4BD5-9978-21DF7CE651E1}
+		{50250625-52C4-42D3-B07E-0DAADC863916} = {DA9B7502-E2F8-4BD5-9978-21DF7CE651E1}
+		{BBDEDE98-0FFC-4145-B04B-E7DBDC129EBA} = {DA9B7502-E2F8-4BD5-9978-21DF7CE651E1}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00E8EC20-303A-4868-9D7A-BEDD51ADEBEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00E8EC20-303A-4868-9D7A-BEDD51ADEBEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00E8EC20-303A-4868-9D7A-BEDD51ADEBEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00E8EC20-303A-4868-9D7A-BEDD51ADEBEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52A143C7-1901-4236-AD89-6B3D486469BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52A143C7-1901-4236-AD89-6B3D486469BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52A143C7-1901-4236-AD89-6B3D486469BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52A143C7-1901-4236-AD89-6B3D486469BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B41B03E9-8BAA-45DA-AF35-E5EB66B33D1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B41B03E9-8BAA-45DA-AF35-E5EB66B33D1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B41B03E9-8BAA-45DA-AF35-E5EB66B33D1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B41B03E9-8BAA-45DA-AF35-E5EB66B33D1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50250625-52C4-42D3-B07E-0DAADC863916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50250625-52C4-42D3-B07E-0DAADC863916}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50250625-52C4-42D3-B07E-0DAADC863916}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50250625-52C4-42D3-B07E-0DAADC863916}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBDEDE98-0FFC-4145-B04B-E7DBDC129EBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBDEDE98-0FFC-4145-B04B-E7DBDC129EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBDEDE98-0FFC-4145-B04B-E7DBDC129EBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBDEDE98-0FFC-4145-B04B-E7DBDC129EBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
