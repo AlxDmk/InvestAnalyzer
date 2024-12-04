@@ -6,4 +6,17 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+        <PackageReference Include="MediatR" Version="12.4.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
+        <PackageReference Include="Rex.Microsoft.AspNetCore.Mvc.Extensions" Version="8.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\TinkoffInvest.Application\TinkoffInvest.Application.csproj" />
+      <ProjectReference Include="..\TinkoffInvest.Core\TinkoffInvest.Core.csproj" />
+      <ProjectReference Include="..\TinkoffInvest.Data\TinkoffInvest.Data.csproj" />
+    </ItemGroup>
+
 </Project>
