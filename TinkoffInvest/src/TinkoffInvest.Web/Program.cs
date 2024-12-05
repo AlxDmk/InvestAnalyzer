@@ -36,5 +36,7 @@ app.UseCors("React");
 app.UseAuthorization();
 
 app.MapControllers();
+await app.UseExchangeDataInitializer(CancellationToken.None);
 app.MapHub<StockFeedHub>("stocks-feed");
+
 app.Run();

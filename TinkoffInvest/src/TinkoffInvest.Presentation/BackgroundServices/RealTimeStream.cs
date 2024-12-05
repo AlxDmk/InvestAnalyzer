@@ -1,6 +1,8 @@
 using Grpc.Core;
 using MediatR;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.SignalR;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -14,16 +16,19 @@ namespace TinkoffInvest.Presentation.BackgroundServices;
 internal sealed class RealTimeStream : BackgroundService
 {
     private readonly TinkoffInvestGrpcApiClient _client;
+    private readonly IConfiguration _configuration;
     private readonly ILogger<RealTimeStream> _logger;
     private readonly IHubContext<StockFeedHub, IStockUpdateClient> _hubContext;
     private readonly IServiceScopeFactory _serviceScopeFactory;
 
     public RealTimeStream(TinkoffInvestGrpcApiClient client,
+        IConfiguration configuration,
         ILogger<RealTimeStream> logger,
         IHubContext<StockFeedHub, IStockUpdateClient> hubContext,
         IServiceScopeFactory serviceScopeFactory)
     {
         _client = client;
+        _configuration = configuration;
         _logger = logger;
         _hubContext = hubContext;
         _serviceScopeFactory = serviceScopeFactory;
@@ -34,6 +39,18 @@ internal sealed class RealTimeStream : BackgroundService
     {
         LastPriceInstruments = [];
         _logger.LogInformation("Сервер запускается");
+
+        
+       
+        _logger.LogInformation($"{_configuration.GetSection("ApplicationSettings:Initial").Value}");
+        
+        // if (File.Exists($"{Directory.GetParent(Directory.GetCurrentDirectory())}/src/TinkoffInvest/src/TinkoffInvest.Data/shares.json"))
+        // {
+        //     
+        // }
+        _logger.LogWarning(File.Exists($"{Directory.GetParent(Directory.GetCurrentDirectory())}/src/TinkoffInvest/src/TinkoffInvest.Data/shares.json") ? "Файл существует" : " Файл не найден");
+        
+        
         return base.StartAsync(cancellationToken);
     }
     
@@ -77,6 +94,10 @@ internal sealed class RealTimeStream : BackgroundService
         using var scope = _serviceScopeFactory.CreateScope();
         var mediator = scope.ServiceProvider.GetRequiredService<IMediator>();
         var list = await mediator.Send(new GetAllLastPriceSubscribedRequest(), stoppingToken);
+        if (list.Count == 0)
+        {
+            _logger.LogWarning("Список мониторинга цен в реальном времени пуст");
+        }
         foreach (var share in list)
         {
             LastPriceInstruments.Add(new LastPriceInstrument { InstrumentId = share?.Figi });

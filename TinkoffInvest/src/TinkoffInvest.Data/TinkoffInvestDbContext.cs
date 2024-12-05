@@ -6,7 +6,7 @@ namespace TinkoffInvest.Data;
 
 public class TinkoffInvestDbContext(DbContextOptions<TinkoffInvestDbContext> options) : DbContext(options)
 {
-    public DbSet<SecurityEntity> Securities { get; set; }
+    public DbSet<SecurityEntity?> Securities { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
