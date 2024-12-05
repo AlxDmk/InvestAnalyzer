@@ -7,6 +7,14 @@ services:
     build:
       context: .
       dockerfile: TinkoffInvest/src/TinkoffInvest.Web/Dockerfile
+    ports:
+      - "5000:8080"
+      - "5001:8081"
+    networks:
+      - t-network
+    depends_on:
+      - postgres  
+      
   postgres:
     container_name: postgres
     image: postgres:latest
